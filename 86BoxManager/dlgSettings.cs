@@ -92,23 +92,23 @@ namespace _86boxManager
                 FileVersionInfo vi = FileVersionInfo.GetVersionInfo(txtEXEdir.Text + @"\86Box.exe");
                 if (vi.FilePrivatePart >= 3541) //Officially supported builds
                 {
-                    lbl86BoxVer1.Text = vi.FileMajorPart.ToString() + "." + vi.FileMinorPart.ToString() + "." + vi.FileBuildPart.ToString() + "." + vi.FilePrivatePart.ToString() + " - fully compatible";
+                    lbl86BoxVer1.Text = vi.FileMajorPart.ToString() + "." + vi.FileMinorPart.ToString() + "." + vi.FileBuildPart.ToString() + "." + vi.FilePrivatePart.ToString() + " - 完整支持";
                     lbl86BoxVer1.ForeColor = Color.ForestGreen;
                 }
                 else if (vi.FilePrivatePart >= 3333 && vi.FilePrivatePart < 3541) //Should mostly work...
                 {
-                    lbl86BoxVer1.Text = vi.FileMajorPart.ToString() + "." + vi.FileMinorPart.ToString() + "." + vi.FileBuildPart.ToString() + "." + vi.FilePrivatePart.ToString() + " - partially compatible";
+                    lbl86BoxVer1.Text = vi.FileMajorPart.ToString() + "." + vi.FileMinorPart.ToString() + "." + vi.FileBuildPart.ToString() + "." + vi.FilePrivatePart.ToString() + " - 部分支持";
                     lbl86BoxVer1.ForeColor = Color.Orange;
                 }
                 else //Completely unsupported, since version info can't be obtained anyway
                 {
-                    lbl86BoxVer1.Text = "Unknown - may not be compatible";
+                    lbl86BoxVer1.Text = "未知 - 可能不被支持";
                     lbl86BoxVer1.ForeColor = Color.Red;
                 }
             }
             catch(FileNotFoundException ex)
             {
-                lbl86BoxVer1.Text = "86Box.exe not found";
+                lbl86BoxVer1.Text = "86Box.exe 未找到";
                 lbl86BoxVer1.ForeColor = Color.Gray;
             }
         }
@@ -119,7 +119,7 @@ namespace _86boxManager
         {
             if (cbxLogging.Checked && string.IsNullOrWhiteSpace(txtLogPath.Text))
             {
-                DialogResult result = MessageBox.Show("Using an empty or whitespace string for the log path will prevent 86Box from logging anything. Are you sure you want to use this path?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("对日志路径使用空字符串或空格字符串将阻止 86Box 记录任何内容。您确定要使用此路径吗？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.No)
                 {
                     return false;
@@ -127,7 +127,7 @@ namespace _86boxManager
             }
             if (!File.Exists(txtEXEdir.Text + "86Box.exe") && !File.Exists(txtEXEdir.Text + @"\86Box.exe"))
             {
-                DialogResult result = MessageBox.Show("86Box.exe could not be found in the directory you specified, so you won't be able to use any virtual machines. Are you sure you want to use this path?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("86Box.exe 在您指定的目录中找不到，因此您将无法使用任何虚拟实例。您确定要使用此路径吗？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.No)
                 {
                     return false;
@@ -159,7 +159,7 @@ namespace _86boxManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error has occurred. Please provide the following information to the developer:\n" + ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("发生错误。请向开发人员提供以下信息：\n" + ex.Message + "\n" + ex.StackTrace, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             finally
@@ -180,7 +180,7 @@ namespace _86boxManager
                 //If the key doesn't exist yet, fallback to defaults
                 if (regkey == null)
                 {
-                    MessageBox.Show("86Box Manager settings could not be loaded. This is normal if you're running 86Box Manager for the first time. Default values will be used.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("无法加载 86Box Manager 设置。如果您是第一次运行 86Box Manager，这是正常的情况。86Box Manager 将使用默认设置。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     //Create the key and reopen it for write access
                     Registry.CurrentUser.CreateSubKey(@"SOFTWARE\86Box");
@@ -220,7 +220,7 @@ namespace _86boxManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("86Box Manager settings could not be loaded, because an error occured trying to load the registry keys and/or values. Make sure you have the required permissions and try again. Default values will be used now.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("无法加载 86Box Manager 设置，因为尝试加载注册表项和/或值时出错。确保程序拥有所需的权限，然后再试一次。现在将使用默认值。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 txtCFGdir.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\86Box VMs";
                 txtEXEdir.Text = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86) + @"\86Box";
@@ -378,6 +378,12 @@ namespace _86boxManager
         {
             lnkGithub.LinkVisited = true;
             Process.Start("https://github.com/86Box/86BoxManager");
+        }
+
+        private void translatorlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            lnkGithub.LinkVisited = true;
+            Process.Start("https://github.com/Kira-Killua/86BoxManager");
         }
     }
 }

@@ -802,18 +802,18 @@ namespace _86boxManager
                     bgw.RunWorkerAsync(vm);
 
                     btnStart.Enabled = false;
-                    btnStart.Text = "Stop";
+                    btnStart.Text = "停止";
                     toolTip.SetToolTip(btnStart, "Stop this virtual machine");
-                    startToolStripMenuItem.Text = "Stop";
+                    startToolStripMenuItem.Text = "停止";
                     startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
                     btnEdit.Enabled = false;
                     btnDelete.Enabled = false;
                     btnConfigure.Enabled = false;
                     btnReset.Enabled = false;
                     btnPause.Enabled = false;
-                    btnPause.Text = "Pause";
+                    btnPause.Text = "挂起/暂停";
                     toolTip.SetToolTip(btnPause, "Pause this virtual machine");
-                    pauseToolStripMenuItem.Text = "Pause";
+                    pauseToolStripMenuItem.Text = "挂起/暂停";
                     pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
                     btnCtrlAltDel.Enabled = false;
                 }
@@ -849,9 +849,9 @@ namespace _86boxManager
                 PostMessage(vm.hWnd, 0x8894, IntPtr.Zero, IntPtr.Zero);
                 vm.Status = VM.STATUS_RUNNING;
                 lstVMs.SelectedItems[0].SubItems[1].Text = vm.GetStatusString();
-                btnPause.Text = "Pause";
+                btnPause.Text = "挂起/暂停";
                 toolTip.SetToolTip(btnPause, "Pause this virtual machine");
-                pauseToolStripMenuItem.Text = "Pause";
+                pauseToolStripMenuItem.Text = "挂起/暂停";
                 pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
             }
             VMCountRefresh();
@@ -923,7 +923,7 @@ namespace _86boxManager
                 regkey.SetValue(newVM.Name, data, RegistryValueKind.Binary);
             }
 
-            MessageBox.Show("Virtual machine \"" + newVM.Name + "\" was successfully created!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("虚拟实例 \"" + newVM.Name + "\" 已成功创建。", "创建虚拟实例", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             //Select the newly created VM
             foreach (ListViewItem lvi in lstVMs.SelectedItems)
@@ -1161,13 +1161,13 @@ namespace _86boxManager
                             vm.Status = VM.STATUS_PAUSED;
                             lvi.SubItems[1].Text = vm.GetStatusString();
                             lvi.ImageIndex = 2;
-                            pauseToolStripMenuItem.Text = "Resume";
-                            btnPause.Text = "Resume";
+                            pauseToolStripMenuItem.Text = "恢复";
+                            btnPause.Text = "恢复";
                             pauseToolStripMenuItem.ToolTipText = "Resume this virtual machine";
                             toolTip.SetToolTip(btnPause, "Resume this virtual machine");
                             btnStart.Enabled = true;
-                            btnStart.Text = "Stop";
-                            startToolStripMenuItem.Text = "Stop";
+                            btnStart.Text = "停止";
+                            startToolStripMenuItem.Text = "停止";
                             startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
                             toolTip.SetToolTip(btnStart, "Stop this virtual machine");
                             btnConfigure.Enabled = true;
@@ -1186,13 +1186,13 @@ namespace _86boxManager
                             lvi.SubItems[1].Text = vm.GetStatusString();
                             lvi.ImageIndex = 1;
                             pauseToolStripMenuItem.Text = "Pause";
-                            btnPause.Text = "Pause";
+                            btnPause.Text = "挂起/暂停";
                             toolTip.SetToolTip(btnPause, "Pause this virtual machine");
                             pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
                             btnStart.Enabled = true;
-                            btnStart.Text = "Stop";
+                            btnStart.Text = "停止";
                             toolTip.SetToolTip(btnStart, "Stop this virtual machine");
-                            startToolStripMenuItem.Text = "Stop";
+                            startToolStripMenuItem.Text = "停止";
                             startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
                             btnConfigure.Enabled = true;
                         }
@@ -1213,9 +1213,9 @@ namespace _86boxManager
                             lvi.SubItems[1].Text = vm.GetStatusString();
                             lvi.ImageIndex = 2;
                             btnStart.Enabled = false;
-                            btnStart.Text = "Stop";
+                            btnStart.Text = "停止";
                             toolTip.SetToolTip(btnStart, "Stop this virtual machine");
-                            startToolStripMenuItem.Text = "Stop";
+                            startToolStripMenuItem.Text = "停止";
                             startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
                             btnEdit.Enabled = false;
                             btnDelete.Enabled = false;
@@ -1238,17 +1238,17 @@ namespace _86boxManager
                             lvi.SubItems[1].Text = vm.GetStatusString();
                             lvi.ImageIndex = 1;
                             btnStart.Enabled = true;
-                            btnStart.Text = "Stop";
+                            btnStart.Text = "停止";
                             toolTip.SetToolTip(btnStart, "Stop this virtual machine");
-                            startToolStripMenuItem.Text = "Stop";
+                            startToolStripMenuItem.Text = "停止";
                             startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
                             btnEdit.Enabled = false;
                             btnDelete.Enabled = false;
                             btnConfigure.Enabled = true;
                             btnReset.Enabled = true;
                             btnPause.Enabled = true;
-                            btnPause.Text = "Pause";
-                            pauseToolStripMenuItem.Text = "Pause";
+                            btnPause.Text = "挂起/暂停";
+                            pauseToolStripMenuItem.Text = "挂起/暂停";
                             pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
                             toolTip.SetToolTip(btnPause, "Pause this virtual machine");
                             btnCtrlAltDel.Enabled = true;
@@ -1270,11 +1270,11 @@ namespace _86boxManager
                         lvi.SubItems[1].Text = vm.GetStatusString();
                         lvi.ImageIndex = 0;
 
-                        btnStart.Text = "Start";
+                        btnStart.Text = "启动";
                         startToolStripMenuItem.Text = "Start";
                         startToolStripMenuItem.ToolTipText = "Start this virtual machine";
                         toolTip.SetToolTip(btnStart, "Start this virtual machine");
-                        btnPause.Text = "Pause";
+                        btnPause.Text = "挂起/暂停";
                         pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
                         pauseToolStripMenuItem.Text = "Pause";
                         toolTip.SetToolTip(btnPause, "Pause this virtual machine");
@@ -1329,7 +1329,7 @@ namespace _86boxManager
                     //If the VM is already running, display a message, otherwise, start it
                     if (vm.Status != VM.STATUS_STOPPED)
                     {
-                        MessageBox.Show("The virtual machine \"" + vmName + "\" is already running.", "Virtual machine already running", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("虚拟实例 \"" + vmName + "\" 已经运行。", "实例已运行", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -1387,11 +1387,11 @@ namespace _86boxManager
                     shortcut.Arguments = "-S \"" + vm.Name + "\"";
                     shortcut.Save();
 
-                    MessageBox.Show("A desktop shortcut for the virtual machine \"" + vm.Name + "\" was successfully created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("实例 \"" + vm.Name + "\" 的桌面快捷方式已成功生成。", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("A desktop shortcut for the virtual machine \"" + vm.Name + "\" could not be created.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("实例 \"" + vm.Name + "\" 的桌面快捷方式未成功生成。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -1441,7 +1441,7 @@ namespace _86boxManager
             //If there are running VMs, display the warning and stop the VMs if user says so
             if (vmCount > 0)
             {
-                DialogResult = MessageBox.Show("Some virtual machines are still running. It's recommended you stop them first before closing 86Box Manager. Do you want to stop them now?", "Virtual machines are still running", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult = MessageBox.Show("一个或多个实例仍在运行。建议您在关闭 86Box Manager 之前先停止它们。你现在想关闭这些实例吗？", "实例仍在运行", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (DialogResult == DialogResult.Yes)
                 {
                     foreach (ListViewItem lvi in lstVMs.Items)
@@ -1509,7 +1509,7 @@ namespace _86boxManager
                 VM vm = (VM)lvi.Tag;
 
                 //Ask the user to confirm
-                DialogResult = MessageBox.Show("Killing a virtual machine can cause data loss. Only do this if 86Box.exe process gets stuck.\n\nDo you really wish to kill the virtual machine \"" + vm.Name + "\"?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult = MessageBox.Show("强行停止实例会丢失数据，如果绝非必要，请勿执行此操作。\n\n确定继续强制停止 \"" + vm.Name + "\" 吗?", "强行停止", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (DialogResult == DialogResult.Yes)
                 {
                     try
@@ -1529,9 +1529,9 @@ namespace _86boxManager
                     lstVMs.SelectedItems[0].SubItems[1].Text = vm.GetStatusString();
                     lstVMs.SelectedItems[0].ImageIndex = 0;
 
-                    btnStart.Text = "Start";
+                    btnStart.Text = "启动";
                     toolTip.SetToolTip(btnStart, "Stop this virtual machine");
-                    btnPause.Text = "Pause";
+                    btnPause.Text = "暂停";
                     if (lstVMs.SelectedItems.Count > 0)
                     {
                         btnEdit.Enabled = true;
@@ -1636,23 +1636,23 @@ namespace _86boxManager
             {
                 VM vm = (VM)lvi.Tag;
 
-                DialogResult = MessageBox.Show("Wiping a virtual machine deletes its configuration and nvr files. You'll have to reconfigure the virtual machine (and the BIOS if applicable).\n\n Are you sure you wish to wipe the virtual machine \"" + vm.Name + "\"?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult = MessageBox.Show("清除实例配置会删除其配置和 nvr 文件。这不会删除虚拟磁盘文件，但您必须重新配置实例（包括实例的 BIOS）。\n\n 您确定要继续清除 \"" + vm.Name + "\"?", "清除实例", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (DialogResult == DialogResult.Yes)
                 {
                     if (vm.Status != VM.STATUS_STOPPED)
                     {
-                        MessageBox.Show("The virtual machine \"" + vm.Name + "\" is currently running and cannot be wiped. Please stop virtual machines before attempting to wipe them.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("实例 \"" + vm.Name + "\" 正在运行。请关闭实例后再进行清除。", "实例正在运行", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }
                     try
                     {
                         System.IO.File.Delete(vm.Path + @"\86box.cfg");
                         Directory.Delete(vm.Path + @"\nvr", true);
-                        MessageBox.Show("The virtual machine \"" + vm.Name + "\" was successfully wiped.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("实例 \"" + vm.Name + "\" 的配置已成功清除。", "配置清除", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred trying to wipe the virtual machine \"" + vm.Name + "\".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("在清除 \"" + vm.Name + "\"时发生错误。", "清除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }
                 }
@@ -1704,11 +1704,11 @@ namespace _86boxManager
 
             if (importFailed)
             {
-                MessageBox.Show("Virtual machine \"" + newVM.Name + "\" was successfully created, but files could not be imported. Make sure the path you selected was correct and valid.\n\nIf the VM is already located in your VMs folder, you don't need to select the Import option, just add a new VM with the same name.", "Import failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("实例 \"" + newVM.Name + "\" 已成功创建，但文件无法被导入。请确保您选择的路径正确有效。\n\n如果实例已位于您设置的实例路径文件夹中，则无需选择导入选项，只需添加具有相同名称的新实例即可。", "导入失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Virtual machine \"" + newVM.Name + "\" was successfully created, files were imported. Remember to update any paths pointing to disk images in your config!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("实例 \"" + newVM.Name + "\" 已创建完成。请记住更新配置中指向磁盘映像的任何路径。", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             //Select the newly created VM

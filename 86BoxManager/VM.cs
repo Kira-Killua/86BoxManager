@@ -43,11 +43,11 @@ namespace _86boxManager
         {
             switch (Status)
             {
-                case STATUS_STOPPED: return "Stopped";
-                case STATUS_RUNNING: return "Running";
-                case STATUS_PAUSED: return "Paused";
-                case STATUS_WAITING: return "Waiting";
-                default: return "Invalid status";
+                case STATUS_STOPPED: return "已停止";
+                case STATUS_RUNNING: return "正在运行";
+                case STATUS_PAUSED: return "已挂起";
+                case STATUS_WAITING: return "等待";
+                default: return "未知状态";
             }
         }
     }

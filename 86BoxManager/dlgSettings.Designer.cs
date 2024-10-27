@@ -59,6 +59,8 @@
             this.gbxMisc = new System.Windows.Forms.GroupBox();
             this.cbxGrid = new System.Windows.Forms.CheckBox();
             this.tabAbout = new System.Windows.Forms.TabPage();
+            this.translatorlink = new System.Windows.Forms.LinkLabel();
+            this.translatorlabel = new System.Windows.Forms.Label();
             this.lnkGithub = new System.Windows.Forms.LinkLabel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblVersion1 = new System.Windows.Forms.Label();
@@ -70,8 +72,6 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.titlelabel = new System.Windows.Forms.Label();
             this.titleDescriptionlabel = new System.Windows.Forms.Label();
-            this.translatorlabel = new System.Windows.Forms.Label();
-            this.translatorlink = new System.Windows.Forms.LinkLabel();
             this.pnlBottom.SuspendLayout();
             this.tbcSettings.SuspendLayout();
             this.tabGeneral.SuspendLayout();
@@ -188,7 +188,7 @@
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(4);
             this.tabGeneral.Size = new System.Drawing.Size(853, 324);
             this.tabGeneral.TabIndex = 0;
-            this.tabGeneral.Text = "General";
+            this.tabGeneral.Text = "常规";
             this.tabGeneral.UseVisualStyleBackColor = true;
             // 
             // gbxBehaviour
@@ -268,7 +268,7 @@
             this.lbl86BoxVer1.AutoSize = true;
             this.lbl86BoxVer1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lbl86BoxVer1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl86BoxVer1.Location = new System.Drawing.Point(125, 74);
+            this.lbl86BoxVer1.Location = new System.Drawing.Point(117, 74);
             this.lbl86BoxVer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl86BoxVer1.Name = "lbl86BoxVer1";
             this.lbl86BoxVer1.Size = new System.Drawing.Size(207, 23);
@@ -358,7 +358,7 @@
             this.tabAdvanced.Padding = new System.Windows.Forms.Padding(4);
             this.tabAdvanced.Size = new System.Drawing.Size(853, 324);
             this.tabAdvanced.TabIndex = 1;
-            this.tabAdvanced.Text = "Advanced";
+            this.tabAdvanced.Text = "高级";
             this.tabAdvanced.UseVisualStyleBackColor = true;
             // 
             // gbxLogging
@@ -453,8 +453,32 @@
             this.tabAbout.Padding = new System.Windows.Forms.Padding(4);
             this.tabAbout.Size = new System.Drawing.Size(853, 324);
             this.tabAbout.TabIndex = 2;
-            this.tabAbout.Text = "About";
+            this.tabAbout.Text = "关于";
             this.tabAbout.UseVisualStyleBackColor = true;
+            // 
+            // translatorlink
+            // 
+            this.translatorlink.AutoSize = true;
+            this.translatorlink.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.translatorlink.Location = new System.Drawing.Point(195, 283);
+            this.translatorlink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.translatorlink.Name = "translatorlink";
+            this.translatorlink.Size = new System.Drawing.Size(359, 23);
+            this.translatorlink.TabIndex = 19;
+            this.translatorlink.TabStop = true;
+            this.translatorlink.Text = "https://github.com/Kira-Killua/86BoxManager";
+            this.translatorlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.translatorlink_LinkClicked);
+            // 
+            // translatorlabel
+            // 
+            this.translatorlabel.AutoSize = true;
+            this.translatorlabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.translatorlabel.Location = new System.Drawing.Point(19, 283);
+            this.translatorlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.translatorlabel.Name = "translatorlabel";
+            this.translatorlabel.Size = new System.Drawing.Size(168, 23);
+            this.translatorlabel.TabIndex = 18;
+            this.translatorlabel.Text = "本程序由 Kira 汉化。";
             // 
             // lnkGithub
             // 
@@ -570,29 +594,6 @@
             this.titleDescriptionlabel.TabIndex = 16;
             this.titleDescriptionlabel.Text = "调整 86Box Manager 选项。";
             // 
-            // translatorlabel
-            // 
-            this.translatorlabel.AutoSize = true;
-            this.translatorlabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.translatorlabel.Location = new System.Drawing.Point(19, 283);
-            this.translatorlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.translatorlabel.Name = "translatorlabel";
-            this.translatorlabel.Size = new System.Drawing.Size(168, 23);
-            this.translatorlabel.TabIndex = 18;
-            this.translatorlabel.Text = "本程序由 Kira 汉化。";
-            // 
-            // translatorlink
-            // 
-            this.translatorlink.AutoSize = true;
-            this.translatorlink.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.translatorlink.Location = new System.Drawing.Point(195, 283);
-            this.translatorlink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.translatorlink.Name = "translatorlink";
-            this.translatorlink.Size = new System.Drawing.Size(359, 23);
-            this.translatorlink.TabIndex = 19;
-            this.translatorlink.TabStop = true;
-            this.translatorlink.Text = "https://github.com/Kira-Killua/86BoxManager";
-            // 
             // dlgSettings
             // 
             this.AcceptButton = this.btnOK;
@@ -614,7 +615,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Settings";
+            this.Text = "设置";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dlgSettings_FormClosing);
             this.Load += new System.EventHandler(this.dlgSettings_Load);
             this.pnlBottom.ResumeLayout(false);

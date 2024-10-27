@@ -67,5 +67,10 @@ namespace _86boxManager
                 tipLblPath1.SetToolTip(lblPath1, main.cfgpath + txtName.Text);
             }
         }
+
+        private void titleDescriptionlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

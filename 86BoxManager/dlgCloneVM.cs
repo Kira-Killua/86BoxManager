@@ -23,7 +23,7 @@ namespace _86boxManager
         private void dlgCloneVM_Load(object sender, EventArgs e)
         {
             lblPath1.Text = main.cfgpath;
-            lblOldVM.Text = "Virtual machine \"" + Path.GetFileName(oldPath) + "\" will be cloned into:";
+            lblOldVM.Text = "虚拟实例 \"" + Path.GetFileName(oldPath) + "\" 将按以下设置被克隆，请确认设置。";
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -38,9 +38,9 @@ namespace _86boxManager
                 if (txtName.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
                 {
                     btnClone.Enabled = false;
-                    lblPath1.Text = "Invalid path";
+                    lblPath1.Text = "非法路径";
                     tipTxtName.Active = true;
-                    tipTxtName.Show("You cannot use the following characters in the name: \\ / : * ? \" < > |", txtName, 20000);
+                    tipTxtName.Show("您不可在路径中使用以下符号: \\ / : * ? \" < > |", txtName, 20000);
                 }
                 else
                 {
@@ -55,12 +55,12 @@ namespace _86boxManager
         {
             if (main.VMCheckIfExists(txtName.Text))
             {
-                MessageBox.Show("A virtual machine with this name already exists. Please pick a different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("具有此名称的实例已存在。请选择其他名称。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (txtName.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
             {
-                MessageBox.Show("There are invalid characters in the name you specified. You can't use the following characters: \\ / : * ? \" < > |", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("名称中包含非法字符。您不可使用以下符号: \\ / : * ? \" < > |", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
