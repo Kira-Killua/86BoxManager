@@ -68,6 +68,10 @@
             this.lblDesc = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.titlelabel = new System.Windows.Forms.Label();
+            this.titleDescriptionlabel = new System.Windows.Forms.Label();
+            this.translatorlabel = new System.Windows.Forms.Label();
+            this.translatorlink = new System.Windows.Forms.LinkLabel();
             this.pnlBottom.SuspendLayout();
             this.tbcSettings.SuspendLayout();
             this.tabGeneral.SuspendLayout();
@@ -90,7 +94,7 @@
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(81, 38);
             this.btnApply.TabIndex = 17;
-            this.btnApply.Text = "Apply";
+            this.btnApply.Text = "应用";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
@@ -104,7 +108,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(81, 38);
             this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -118,7 +122,7 @@
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(81, 38);
             this.btnOK.TabIndex = 15;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "确定";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -129,9 +133,9 @@
             this.cbxShowConsole.Location = new System.Drawing.Point(356, 29);
             this.cbxShowConsole.Margin = new System.Windows.Forms.Padding(2);
             this.cbxShowConsole.Name = "cbxShowConsole";
-            this.cbxShowConsole.Size = new System.Drawing.Size(269, 28);
+            this.cbxShowConsole.Size = new System.Drawing.Size(182, 28);
             this.cbxShowConsole.TabIndex = 13;
-            this.cbxShowConsole.Text = "Enable 86Box console window";
+            this.cbxShowConsole.Text = "使用 86Box 控制台";
             this.cbxShowConsole.UseVisualStyleBackColor = true;
             this.cbxShowConsole.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
@@ -142,9 +146,9 @@
             this.btnDefaults.Location = new System.Drawing.Point(14, 14);
             this.btnDefaults.Margin = new System.Windows.Forms.Padding(2);
             this.btnDefaults.Name = "btnDefaults";
-            this.btnDefaults.Size = new System.Drawing.Size(81, 38);
+            this.btnDefaults.Size = new System.Drawing.Size(123, 38);
             this.btnDefaults.TabIndex = 14;
-            this.btnDefaults.Text = "Defaults";
+            this.btnDefaults.Text = "恢复默认设置";
             this.btnDefaults.UseVisualStyleBackColor = true;
             this.btnDefaults.Click += new System.EventHandler(this.btnDefaults_Click);
             // 
@@ -156,7 +160,7 @@
             this.pnlBottom.Controls.Add(this.btnCancel);
             this.pnlBottom.Controls.Add(this.btnOK);
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 355);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 465);
             this.pnlBottom.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(886, 65);
@@ -167,11 +171,11 @@
             this.tbcSettings.Controls.Add(this.tabGeneral);
             this.tbcSettings.Controls.Add(this.tabAdvanced);
             this.tbcSettings.Controls.Add(this.tabAbout);
-            this.tbcSettings.Location = new System.Drawing.Point(15, 15);
+            this.tbcSettings.Location = new System.Drawing.Point(11, 92);
             this.tbcSettings.Margin = new System.Windows.Forms.Padding(4);
             this.tbcSettings.Name = "tbcSettings";
             this.tbcSettings.SelectedIndex = 0;
-            this.tbcSettings.Size = new System.Drawing.Size(861, 329);
+            this.tbcSettings.Size = new System.Drawing.Size(861, 360);
             this.tbcSettings.TabIndex = 0;
             // 
             // tabGeneral
@@ -182,7 +186,7 @@
             this.tabGeneral.Margin = new System.Windows.Forms.Padding(4);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(4);
-            this.tabGeneral.Size = new System.Drawing.Size(853, 293);
+            this.tabGeneral.Size = new System.Drawing.Size(853, 324);
             this.tabGeneral.TabIndex = 0;
             this.tabGeneral.Text = "General";
             this.tabGeneral.UseVisualStyleBackColor = true;
@@ -199,7 +203,7 @@
             this.gbxBehaviour.Size = new System.Drawing.Size(836, 108);
             this.gbxBehaviour.TabIndex = 6;
             this.gbxBehaviour.TabStop = false;
-            this.gbxBehaviour.Text = "Behaviour";
+            this.gbxBehaviour.Text = "程序偏好";
             // 
             // cbxMinimizeTray
             // 
@@ -208,9 +212,9 @@
             this.cbxMinimizeTray.Location = new System.Drawing.Point(11, 29);
             this.cbxMinimizeTray.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMinimizeTray.Name = "cbxMinimizeTray";
-            this.cbxMinimizeTray.Size = new System.Drawing.Size(326, 28);
+            this.cbxMinimizeTray.Size = new System.Drawing.Size(177, 28);
             this.cbxMinimizeTray.TabIndex = 5;
-            this.cbxMinimizeTray.Text = "Minimize 86Box Manager to tray icon";
+            this.cbxMinimizeTray.Text = "最小化至系统托盘";
             this.cbxMinimizeTray.UseVisualStyleBackColor = true;
             this.cbxMinimizeTray.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
@@ -221,9 +225,9 @@
             this.cbxCloseTray.Location = new System.Drawing.Point(421, 29);
             this.cbxCloseTray.Margin = new System.Windows.Forms.Padding(2);
             this.cbxCloseTray.Name = "cbxCloseTray";
-            this.cbxCloseTray.Size = new System.Drawing.Size(298, 28);
+            this.cbxCloseTray.Size = new System.Drawing.Size(279, 28);
             this.cbxCloseTray.TabIndex = 6;
-            this.cbxCloseTray.Text = "Close 86Box Manager to tray icon";
+            this.cbxCloseTray.Text = "点击关闭按钮时仅退出到任务栏";
             this.cbxCloseTray.UseVisualStyleBackColor = true;
             this.cbxCloseTray.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
@@ -234,9 +238,9 @@
             this.cbxMinimize.Location = new System.Drawing.Point(11, 64);
             this.cbxMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.cbxMinimize.Name = "cbxMinimize";
-            this.cbxMinimize.Size = new System.Drawing.Size(399, 28);
+            this.cbxMinimize.Size = new System.Drawing.Size(301, 28);
             this.cbxMinimize.TabIndex = 7;
-            this.cbxMinimize.Text = "Minimize 86Box Manager when a VM is started";
+            this.cbxMinimize.Text = "实例启动时最小化 86Box Manager";
             this.cbxMinimize.UseVisualStyleBackColor = true;
             this.cbxMinimize.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
@@ -257,7 +261,7 @@
             this.gbxPaths.Size = new System.Drawing.Size(836, 161);
             this.gbxPaths.TabIndex = 5;
             this.gbxPaths.TabStop = false;
-            this.gbxPaths.Text = "Paths";
+            this.gbxPaths.Text = "86Box 设置";
             // 
             // lbl86BoxVer1
             // 
@@ -277,9 +281,9 @@
             this.lbl86BoxVer.Location = new System.Drawing.Point(6, 74);
             this.lbl86BoxVer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl86BoxVer.Name = "lbl86BoxVer";
-            this.lbl86BoxVer.Size = new System.Drawing.Size(119, 23);
+            this.lbl86BoxVer.Size = new System.Drawing.Size(99, 23);
             this.lbl86BoxVer.TabIndex = 5;
-            this.lbl86BoxVer.Text = "86Box version:";
+            this.lbl86BoxVer.Text = "86Box 版本:";
             // 
             // lblCFGdir
             // 
@@ -287,9 +291,9 @@
             this.lblCFGdir.Location = new System.Drawing.Point(6, 116);
             this.lblCFGdir.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCFGdir.Name = "lblCFGdir";
-            this.lblCFGdir.Size = new System.Drawing.Size(80, 23);
+            this.lblCFGdir.Size = new System.Drawing.Size(82, 23);
             this.lblCFGdir.TabIndex = 4;
-            this.lblCFGdir.Text = "VM path:";
+            this.lblCFGdir.Text = "实例位置:";
             // 
             // txtCFGdir
             // 
@@ -327,9 +331,9 @@
             this.lblEXEdir.Location = new System.Drawing.Point(6, 32);
             this.lblEXEdir.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEXEdir.Name = "lblEXEdir";
-            this.lblEXEdir.Size = new System.Drawing.Size(100, 23);
+            this.lblEXEdir.Size = new System.Drawing.Size(99, 23);
             this.lblEXEdir.TabIndex = 3;
-            this.lblEXEdir.Text = "86Box path:";
+            this.lblEXEdir.Text = "86Box 位置:";
             // 
             // btnBrowse1
             // 
@@ -352,7 +356,7 @@
             this.tabAdvanced.Margin = new System.Windows.Forms.Padding(4);
             this.tabAdvanced.Name = "tabAdvanced";
             this.tabAdvanced.Padding = new System.Windows.Forms.Padding(4);
-            this.tabAdvanced.Size = new System.Drawing.Size(853, 293);
+            this.tabAdvanced.Size = new System.Drawing.Size(853, 324);
             this.tabAdvanced.TabIndex = 1;
             this.tabAdvanced.Text = "Advanced";
             this.tabAdvanced.UseVisualStyleBackColor = true;
@@ -369,7 +373,7 @@
             this.gbxLogging.Size = new System.Drawing.Size(836, 116);
             this.gbxLogging.TabIndex = 18;
             this.gbxLogging.TabStop = false;
-            this.gbxLogging.Text = "Logging";
+            this.gbxLogging.Text = "Log 模式";
             // 
             // cbxLogging
             // 
@@ -378,9 +382,9 @@
             this.cbxLogging.Location = new System.Drawing.Point(11, 29);
             this.cbxLogging.Margin = new System.Windows.Forms.Padding(2);
             this.cbxLogging.Name = "cbxLogging";
-            this.cbxLogging.Size = new System.Drawing.Size(258, 28);
+            this.cbxLogging.Size = new System.Drawing.Size(309, 28);
             this.cbxLogging.TabIndex = 9;
-            this.cbxLogging.Text = "Enable 86Box logging to file:";
+            this.cbxLogging.Text = "保存 86Box 的运行 Log 到以下文件:";
             this.cbxLogging.UseVisualStyleBackColor = true;
             this.cbxLogging.CheckedChanged += new System.EventHandler(this.cbxLogging_CheckedChanged);
             // 
@@ -416,7 +420,7 @@
             this.gbxMisc.Size = new System.Drawing.Size(836, 71);
             this.gbxMisc.TabIndex = 17;
             this.gbxMisc.TabStop = false;
-            this.gbxMisc.Text = "Miscellaneous";
+            this.gbxMisc.Text = "杂项";
             // 
             // cbxGrid
             // 
@@ -425,14 +429,16 @@
             this.cbxGrid.Location = new System.Drawing.Point(11, 29);
             this.cbxGrid.Margin = new System.Windows.Forms.Padding(2);
             this.cbxGrid.Name = "cbxGrid";
-            this.cbxGrid.Size = new System.Drawing.Size(340, 28);
+            this.cbxGrid.Size = new System.Drawing.Size(262, 28);
             this.cbxGrid.TabIndex = 12;
-            this.cbxGrid.Text = "Enable grid lines in virtual machines list";
+            this.cbxGrid.Text = "在虚拟实例列表中启用网格线";
             this.cbxGrid.UseVisualStyleBackColor = true;
             this.cbxGrid.CheckedChanged += new System.EventHandler(this.cbx_CheckedChanged);
             // 
             // tabAbout
             // 
+            this.tabAbout.Controls.Add(this.translatorlink);
+            this.tabAbout.Controls.Add(this.translatorlabel);
             this.tabAbout.Controls.Add(this.lnkGithub);
             this.tabAbout.Controls.Add(this.imgLogo);
             this.tabAbout.Controls.Add(this.lblVersion1);
@@ -445,7 +451,7 @@
             this.tabAbout.Margin = new System.Windows.Forms.Padding(4);
             this.tabAbout.Name = "tabAbout";
             this.tabAbout.Padding = new System.Windows.Forms.Padding(4);
-            this.tabAbout.Size = new System.Drawing.Size(853, 293);
+            this.tabAbout.Size = new System.Drawing.Size(853, 324);
             this.tabAbout.TabIndex = 2;
             this.tabAbout.Text = "About";
             this.tabAbout.UseVisualStyleBackColor = true;
@@ -454,7 +460,7 @@
             // 
             this.lnkGithub.AutoSize = true;
             this.lnkGithub.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lnkGithub.Location = new System.Drawing.Point(19, 250);
+            this.lnkGithub.Location = new System.Drawing.Point(341, 244);
             this.lnkGithub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkGithub.Name = "lnkGithub";
             this.lnkGithub.Size = new System.Drawing.Size(328, 23);
@@ -478,7 +484,7 @@
             // 
             this.lblVersion1.AutoSize = true;
             this.lblVersion1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblVersion1.Location = new System.Drawing.Point(86, 104);
+            this.lblVersion1.Location = new System.Drawing.Point(64, 104);
             this.lblVersion1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersion1.Name = "lblVersion1";
             this.lblVersion1.Size = new System.Drawing.Size(168, 23);
@@ -489,7 +495,7 @@
             // 
             this.lnkGithub2.AutoSize = true;
             this.lnkGithub2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lnkGithub2.Location = new System.Drawing.Point(19, 221);
+            this.lnkGithub2.Location = new System.Drawing.Point(19, 244);
             this.lnkGithub2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkGithub2.Name = "lnkGithub2";
             this.lnkGithub2.Size = new System.Drawing.Size(260, 23);
@@ -517,9 +523,9 @@
             this.lblVersion.Location = new System.Drawing.Point(19, 104);
             this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(70, 23);
+            this.lblVersion.Size = new System.Drawing.Size(48, 23);
             this.lblVersion.TabIndex = 14;
-            this.lblVersion.Text = "Version:";
+            this.lblVersion.Text = "版本:";
             // 
             // lblDesc
             // 
@@ -528,9 +534,9 @@
             this.lblDesc.Location = new System.Drawing.Point(19, 69);
             this.lblDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDesc.Name = "lblDesc";
-            this.lblDesc.Size = new System.Drawing.Size(382, 23);
+            this.lblDesc.Size = new System.Drawing.Size(231, 23);
             this.lblDesc.TabIndex = 13;
-            this.lblDesc.Text = "A configuration manager for the 86Box emulator";
+            this.lblDesc.Text = "86Box 仿真器的配置管理器。";
             // 
             // lblTitle
             // 
@@ -544,6 +550,49 @@
             this.lblTitle.TabIndex = 11;
             this.lblTitle.Text = "86Box Manager";
             // 
+            // titlelabel
+            // 
+            this.titlelabel.AutoSize = true;
+            this.titlelabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titlelabel.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.titlelabel.Location = new System.Drawing.Point(17, 21);
+            this.titlelabel.Name = "titlelabel";
+            this.titlelabel.Size = new System.Drawing.Size(246, 35);
+            this.titlelabel.TabIndex = 15;
+            this.titlelabel.Text = "设置 86Box Manager";
+            // 
+            // titleDescriptionlabel
+            // 
+            this.titleDescriptionlabel.AutoSize = true;
+            this.titleDescriptionlabel.Location = new System.Drawing.Point(19, 58);
+            this.titleDescriptionlabel.Name = "titleDescriptionlabel";
+            this.titleDescriptionlabel.Size = new System.Drawing.Size(224, 23);
+            this.titleDescriptionlabel.TabIndex = 16;
+            this.titleDescriptionlabel.Text = "调整 86Box Manager 选项。";
+            // 
+            // translatorlabel
+            // 
+            this.translatorlabel.AutoSize = true;
+            this.translatorlabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.translatorlabel.Location = new System.Drawing.Point(19, 283);
+            this.translatorlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.translatorlabel.Name = "translatorlabel";
+            this.translatorlabel.Size = new System.Drawing.Size(168, 23);
+            this.translatorlabel.TabIndex = 18;
+            this.translatorlabel.Text = "本程序由 Kira 汉化。";
+            // 
+            // translatorlink
+            // 
+            this.translatorlink.AutoSize = true;
+            this.translatorlink.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.translatorlink.Location = new System.Drawing.Point(195, 283);
+            this.translatorlink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.translatorlink.Name = "translatorlink";
+            this.translatorlink.Size = new System.Drawing.Size(359, 23);
+            this.translatorlink.TabIndex = 19;
+            this.translatorlink.TabStop = true;
+            this.translatorlink.Text = "https://github.com/Kira-Killua/86BoxManager";
+            // 
             // dlgSettings
             // 
             this.AcceptButton = this.btnOK;
@@ -551,7 +600,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(886, 420);
+            this.ClientSize = new System.Drawing.Size(886, 530);
+            this.Controls.Add(this.titleDescriptionlabel);
+            this.Controls.Add(this.titlelabel);
             this.Controls.Add(this.tbcSettings);
             this.Controls.Add(this.pnlBottom);
             this.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -582,6 +633,7 @@
             this.tabAbout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -625,5 +677,9 @@
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label titlelabel;
+        private System.Windows.Forms.Label titleDescriptionlabel;
+        private System.Windows.Forms.LinkLabel translatorlink;
+        private System.Windows.Forms.Label translatorlabel;
     }
 }

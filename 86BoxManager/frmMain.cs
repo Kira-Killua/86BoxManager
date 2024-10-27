@@ -137,53 +137,53 @@ namespace _86boxManager
                 if (vm.Status == VM.STATUS_RUNNING)
                 {
                     btnStart.Enabled = true;
-                    btnStart.Text = "Stop";
-                    toolTip.SetToolTip(btnStart, "Stop this virtual machine");
+                    btnStart.Text = "停止";
+                    toolTip.SetToolTip(btnStart, "停止此虚拟实例。您会丢失实例内未保存的内容。");
                     btnEdit.Enabled = false;
                     btnDelete.Enabled = false;
                     btnConfigure.Enabled = true;
                     btnPause.Enabled = true;
-                    btnPause.Text = "Pause";
+                    btnPause.Text = "挂起/暂停";
                     btnReset.Enabled = true;
                     btnCtrlAltDel.Enabled = true;
                 }
                 else if (vm.Status == VM.STATUS_STOPPED)
                 {
                     btnStart.Enabled = true;
-                    btnStart.Text = "Start";
-                    toolTip.SetToolTip(btnStart, "Start this virtual machine");
+                    btnStart.Text = "启动";
+                    toolTip.SetToolTip(btnStart, "启动此虚拟实例。");
                     btnEdit.Enabled = true;
                     btnDelete.Enabled = true;
                     btnConfigure.Enabled = true;
                     btnPause.Enabled = false;
-                    btnPause.Text = "Pause";
+                    btnPause.Text = "挂起/暂停";
                     btnReset.Enabled = false;
                     btnCtrlAltDel.Enabled = false;
                 }
                 else if (vm.Status == VM.STATUS_PAUSED)
                 {
                     btnStart.Enabled = true;
-                    btnStart.Text = "Stop";
-                    toolTip.SetToolTip(btnStart, "Stop this virtual machine");
+                    btnStart.Text = "停止";
+                    toolTip.SetToolTip(btnStart, "停止此虚拟实例。您会丢失实例内未保存的内容。");
                     btnEdit.Enabled = false;
                     btnDelete.Enabled = false;
                     btnConfigure.Enabled = true;
                     btnPause.Enabled = true;
-                    btnPause.Text = "Resume";
+                    btnPause.Text = "恢复";
                     btnReset.Enabled = true;
                     btnCtrlAltDel.Enabled = true;
                 }
                 else if (vm.Status == VM.STATUS_WAITING)
                 {
                     btnStart.Enabled = false;
-                    btnStart.Text = "Stop";
-                    toolTip.SetToolTip(btnStart, "Stop this virtual machine");
+                    btnStart.Text = "停止";
+                    toolTip.SetToolTip(btnStart, "停止此虚拟实例。您会丢失实例内未保存的内容。");
                     btnEdit.Enabled = false;
                     btnDelete.Enabled = false;
                     btnReset.Enabled = false;
                     btnCtrlAltDel.Enabled = false;
                     btnPause.Enabled = false;
-                    btnPause.Text = "Pause";
+                    btnPause.Text = "挂起/暂停";
                     btnConfigure.Enabled = false;
                 }
             }
@@ -223,7 +223,7 @@ namespace _86boxManager
 
                 if (regkey == null)
                 {
-                    MessageBox.Show("86Box Manager settings could not be loaded. This is normal if you're running 86Box Manager for the first time. Default values will be used.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("86Box Manager 的设置未能成功加载。这可能是您第一次使用，将加载默认设置。", "注意", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     //Create the key and reopen it for write access
                     Registry.CurrentUser.CreateSubKey(@"SOFTWARE\86Box");
@@ -291,7 +291,7 @@ namespace _86boxManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured trying to load the 86Box Manager registry keys and/or values. Make sure you have the required permissions and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                MessageBox.Show("一个错误使 86Box Manager 无法正确加载注册表配置。请您关注软件权限后再试一次。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);                
                 Application.Exit();
             }
         }
@@ -338,7 +338,7 @@ namespace _86boxManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("The Virtual Machines registry key could not be opened, so no stored virtual machines can be used. Make sure you have the required permissions and try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("一个错误使 86Box Manager 无法正确加载注册表配置。请您关注软件权限后再试一次。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -353,7 +353,7 @@ namespace _86boxManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error has occurred. Please provide the following details to the developer:\n" + ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("发生错误！如需反馈，请向 86BoxMananger Issue 中提交下面的信息:\n" + ex.Message + "\n" + ex.StackTrace, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             e.Result = vm;
         }
@@ -377,11 +377,11 @@ namespace _86boxManager
                         btnEdit.Enabled = true;
                         btnDelete.Enabled = true;
                         btnStart.Enabled = true;
-                        btnStart.Text = "Start";
-                        toolTip.SetToolTip(btnStart, "Start this virtual machine");
+                        btnStart.Text = "启动";
+                        toolTip.SetToolTip(btnStart, "启动此虚拟实例。");
                         btnConfigure.Enabled = true;
                         btnPause.Enabled = false;
-                        btnPause.Text = "Pause";
+                        btnPause.Text = "挂起/暂停";
                         btnCtrlAltDel.Enabled = false;
                         btnReset.Enabled = false;
                     }
@@ -406,9 +406,9 @@ namespace _86boxManager
                 {
                     case VM.STATUS_RUNNING:
                         {
-                            startToolStripMenuItem.Text = "Stop";
+                            startToolStripMenuItem.Text = "停止";
                             startToolStripMenuItem.Enabled = true;
-                            startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
+                            startToolStripMenuItem.ToolTipText = "停止此虚拟实例。您会丢失实例内未保存的内容。";
                             editToolStripMenuItem.Enabled = false;
                             deleteToolStripMenuItem.Enabled = false;
                             hardResetToolStripMenuItem.Enabled = true;
@@ -420,9 +420,9 @@ namespace _86boxManager
                         break;
                     case VM.STATUS_STOPPED:
                         {
-                            startToolStripMenuItem.Text = "Start";
+                            startToolStripMenuItem.Text = "启动";
                             startToolStripMenuItem.Enabled = true;
-                            startToolStripMenuItem.ToolTipText = "Start this virtual machine";
+                            startToolStripMenuItem.ToolTipText = "启动此虚拟实例。";
                             editToolStripMenuItem.Enabled = true;
                             deleteToolStripMenuItem.Enabled = true;
                             hardResetToolStripMenuItem.Enabled = false;
@@ -435,30 +435,30 @@ namespace _86boxManager
                     case VM.STATUS_WAITING:
                         {
                             startToolStripMenuItem.Enabled = false;
-                            startToolStripMenuItem.Text = "Stop";
-                            startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
+                            startToolStripMenuItem.Text = "停止";
+                            startToolStripMenuItem.ToolTipText = "停止此虚拟实例。您会丢失实例内未保存的内容。";
                             editToolStripMenuItem.Enabled = false;
                             deleteToolStripMenuItem.Enabled = false;
                             hardResetToolStripMenuItem.Enabled = false;
                             resetCTRLALTDELETEToolStripMenuItem.Enabled = false;
                             pauseToolStripMenuItem.Enabled = false;
-                            pauseToolStripMenuItem.Text = "Pause";
-                            pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
+                            pauseToolStripMenuItem.Text = "挂起/暂停";
+                            pauseToolStripMenuItem.ToolTipText = "挂起此虚拟实例。您运行的实例将被暂停直到您恢复实例。";
                             configureToolStripMenuItem.Enabled = false;
                         }
                         break;
                     case VM.STATUS_PAUSED:
                         {
                             startToolStripMenuItem.Enabled = true;
-                            startToolStripMenuItem.Text = "Stop";
-                            startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
+                            startToolStripMenuItem.Text = "停止";
+                            startToolStripMenuItem.ToolTipText = "停止此虚拟实例。您会丢失实例内未保存的内容。";
                             editToolStripMenuItem.Enabled = false;
                             deleteToolStripMenuItem.Enabled = false;
                             hardResetToolStripMenuItem.Enabled = true;
                             resetCTRLALTDELETEToolStripMenuItem.Enabled = true;
                             pauseToolStripMenuItem.Enabled = true;
-                            pauseToolStripMenuItem.Text = "Resume";
-                            pauseToolStripMenuItem.ToolTipText = "Resume this virtual machine";
+                            pauseToolStripMenuItem.Text = "恢复";
+                            pauseToolStripMenuItem.ToolTipText = "恢复此虚拟实例以继续。";
                             configureToolStripMenuItem.Enabled = true;
                         }
                         break;
@@ -467,15 +467,15 @@ namespace _86boxManager
             //Multiple VMs selected => disable most options
             else
             {
-                startToolStripMenuItem.Text = "Start";
+                startToolStripMenuItem.Text = "启动";
                 startToolStripMenuItem.Enabled = false;
-                startToolStripMenuItem.ToolTipText = "Start this virtual machine";
+                startToolStripMenuItem.ToolTipText = "启动此虚拟实例。";
                 editToolStripMenuItem.Enabled = false;
                 deleteToolStripMenuItem.Enabled = true;
                 hardResetToolStripMenuItem.Enabled = false;
                 resetCTRLALTDELETEToolStripMenuItem.Enabled = false;
                 pauseToolStripMenuItem.Enabled = false;
-                pauseToolStripMenuItem.Text = "Pause";
+                pauseToolStripMenuItem.Text = "挂起/暂停";
                 killToolStripMenuItem.Enabled = true;
                 configureToolStripMenuItem.Enabled = false;
                 cloneToolStripMenuItem.Enabled = false;
@@ -511,7 +511,7 @@ namespace _86boxManager
             if (vmCount > 0)
             {
                 e.Cancel = true;
-                DialogResult = MessageBox.Show("Some virtual machines are still running. It's recommended you stop them first before closing 86Box Manager. Do you want to stop them now?", "Virtual machines are still running", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                DialogResult = MessageBox.Show("一个或多个实例仍在运行。在关闭 86Box Manager 前，建议您关闭所有实例。\n您想现在停止这些虚拟机吗? 如果这样，您可能丢失未保存的数据。", "实例仍在运行", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (DialogResult == DialogResult.Yes)
                 {
                     foreach (ListViewItem lvi in lstVMs.Items)
@@ -572,16 +572,16 @@ namespace _86boxManager
             PostMessage(vm.hWnd, 0x8890, IntPtr.Zero, IntPtr.Zero);
             lstVMs.SelectedItems[0].SubItems[1].Text = vm.GetStatusString();
             lstVMs.SelectedItems[0].ImageIndex = 2;
-            pauseToolStripMenuItem.Text = "Resume";
-            btnPause.Text = "Resume";
-            toolTip.SetToolTip(btnStart, "Stop this virtual machine");
+            pauseToolStripMenuItem.Text = "恢复";
+            btnPause.Text = "恢复";
+            toolTip.SetToolTip(btnStart, "停止此虚拟实例。");
             btnStart.Enabled = true;
-            btnStart.Text = "Stop";
-            startToolStripMenuItem.Text = "Stop";
-            startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
+            btnStart.Text = "停止";
+            startToolStripMenuItem.Text = "停止";
+            startToolStripMenuItem.ToolTipText = "停止此虚拟实例。您会丢失实例内未保存的内容。";
             btnConfigure.Enabled = true;
-            pauseToolStripMenuItem.ToolTipText = "Resume this virtual machine";
-            toolTip.SetToolTip(btnPause, "Resume this virtual machine");
+            pauseToolStripMenuItem.ToolTipText = "恢复此虚拟实例。";
+            toolTip.SetToolTip(btnPause, "恢复此虚拟实例。");
 
             VMSort(sortColumn, sortOrder);
             VMCountRefresh();
@@ -595,15 +595,15 @@ namespace _86boxManager
             vm.Status = VM.STATUS_RUNNING;
             lstVMs.SelectedItems[0].SubItems[1].Text = vm.GetStatusString();
             lstVMs.SelectedItems[0].ImageIndex = 1;
-            pauseToolStripMenuItem.Text = "Pause";
-            btnPause.Text = "Pause";
+            pauseToolStripMenuItem.Text = "挂起/暂停";
+            btnPause.Text = "挂起/暂停";
             btnStart.Enabled = true;
-            startToolStripMenuItem.Text = "Stop";
-            startToolStripMenuItem.ToolTipText = "Stop this virtual machine";
+            startToolStripMenuItem.Text = "停止";
+            startToolStripMenuItem.ToolTipText = "停止此虚拟实例。";
             btnConfigure.Enabled = true;
-            pauseToolStripMenuItem.ToolTipText = "Pause this virtual machine";
-            toolTip.SetToolTip(btnStart, "Stop this virtual machine");
-            toolTip.SetToolTip(btnPause, "Pause this virtual machine");
+            pauseToolStripMenuItem.ToolTipText = "暂停此虚拟实例。";
+            toolTip.SetToolTip(btnStart, "停止此虚拟实例。您会丢失实例内未保存的内容。");
+            toolTip.SetToolTip(btnPause, "挂起此虚拟实例。");
 
             VMSort(sortColumn, sortOrder);
             VMCountRefresh();
@@ -1761,7 +1761,17 @@ namespace _86boxManager
                 }
             }
 
-            lblVMCount.Text = "All VMs: " + lstVMs.Items.Count + " | Running: " + runningVMs + " | Paused: " + pausedVMs + " | Waiting: " + waitingVMs + " | Stopped: " + stoppedVMs;
+            if (runningVMs != 0)
+            {
+                titlelabel.Text = "正在运行 " + runningVMs + " 个实例";
+                titleDescriptionlabel.Text = "正在运行虚拟实例，您仍可以在此管理您的所有实例。";
+            }
+            else
+            {
+                titlelabel.Text = "管理 86Box 虚拟实例";
+                titleDescriptionlabel.Text = "以下是 86Box Manager 中保存的实例。选择一个实例，并在左侧进行操作选项。";
+            }
+            lblVMCount.Text = "所有虚拟实例: " + lstVMs.Items.Count + " | 正在运行: " + runningVMs + " | 挂起/暂停: " + pausedVMs + " | 等待: " + waitingVMs + " | 已停止: " + stoppedVMs;
         }
 
         private void openConfigFileToolStripMenuItem_Click(object sender, EventArgs e)

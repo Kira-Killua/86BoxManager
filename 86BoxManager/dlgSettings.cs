@@ -241,7 +241,7 @@ namespace _86boxManager
             FolderSelectDialog dialog = new FolderSelectDialog
             {
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer),
-                Title = "Select a folder where 86Box program files and the roms folder are located"
+                Title = "选择 86Box 目录"
             };
 
             if (dialog.Show(Handle))
@@ -259,7 +259,7 @@ namespace _86boxManager
             FolderSelectDialog dialog = new FolderSelectDialog
             {
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer),
-                Title = "Select a folder where your virtual machines (configs, nvr folders, etc.) will be located"
+                Title = "选择一个存储虚拟实例的位置"
             };
 
             if (dialog.Show(Handle))
@@ -274,7 +274,7 @@ namespace _86boxManager
 
         private void btnDefaults_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("All settings will be reset to their default values. Do you wish to continue?", "Settings will be reset", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("将恢复至默认设置。是否继续?", "恢复默认设置", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 ResetSettings();
