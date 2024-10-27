@@ -1,4 +1,4 @@
-# 86Box Manager
+# 86Box Manager-CN
 **86Box Manager** is an optional configuration manager for the [86Box emulator](https://github.com/86Box/86Box). It's released under the MIT license, so it can be freely distributed with 86Box. See the `LICENSE` file for license information and `AUTHORS` for a complete list of contributors and authors.
 
 It's written in C# with Windows Forms. Please see the [wiki](https://github.com/86Box/86BoxManager/wiki) for additional information.
