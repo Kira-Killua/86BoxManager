@@ -35,7 +35,7 @@ namespace _86boxManager
 
         public override string ToString()
         {
-            return "Name: " + Name + ", description: " + Desc + ", path: " + Path + ", status: " + Status;
+            return "名称: " + Name + ", 描述: " + Desc + ", 路径: " + Path + ", 状态: " + Status;
         }
 
         //Returns a lovely status string for use in UI

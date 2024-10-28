@@ -19,13 +19,13 @@ namespace _86boxManager
         {
             if (main.VMCheckIfExists(txtName.Text))
             {
-                MessageBox.Show("A virtual machine with this name already exists. Please pick a different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("这个名称已被使用，请更换一个。", "名称已被使用", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult = DialogResult.None;
                 return;
             }
             if (existingVM && string.IsNullOrWhiteSpace(txtImportPath.Text))
             {
-                MessageBox.Show("If you wish to import VM files, you must specify a path.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("如果要向实例导入虚拟机文件，您需要输入导入的路径。", "未输入路径", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult = DialogResult.None;
                 return;
             }
@@ -59,9 +59,9 @@ namespace _86boxManager
                 if (txtName.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
                 {
                     btnAdd.Enabled = false;
-                    lblPath1.Text = "Invalid path";
+                    lblPath1.Text = "非法路径";
                     tipTxtName.Active = true;
-                    tipTxtName.Show("You cannot use the following characters in the name: \\ / : * ? \" < > |", txtName, 20000);
+                    tipTxtName.Show("Windows 不允许在路径中使用以下符号: \\ / : * ? \" < > |", txtName, 20000);
                 }
                 else
                 {
@@ -77,7 +77,7 @@ namespace _86boxManager
             FolderSelectDialog dialog = new FolderSelectDialog
             {
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer),
-                Title = "Select a folder where your virtual machines (configs, nvr folders, etc.) will be located"
+                Title = "选择您的虚拟机存放目录"
             };
 
             if (dialog.Show(Handle))

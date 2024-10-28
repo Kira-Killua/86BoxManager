@@ -24,7 +24,7 @@ namespace _86boxManager
             lblVersion1.Text = Application.ProductVersion.Substring(0, Application.ProductVersion.Length - 2);
 
             #if DEBUG
-                lblVersion1.Text += " (Debug)";
+                lblVersion1.Text += " (测试版)";
             #endif
         }
 
@@ -34,7 +34,7 @@ namespace _86boxManager
             if (settingsChanged == true)
             {
                 e.Cancel = true;
-                DialogResult result = MessageBox.Show("Would you like to save the changes you've made to the settings?", "Unsaved changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("是否保存您做的设置更改?", "未保存设置", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     SaveSettings();
@@ -356,7 +356,7 @@ namespace _86boxManager
         {
             SaveFileDialog ofd = new SaveFileDialog();
             ofd.DefaultExt = "log";
-            ofd.Title = "Select a file where 86Box logs will be saved";
+            ofd.Title = "选择 86Box 的 Log 保存位置";
             ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer);
             ofd.Filter = "Log files (*.log)|*.log";
 

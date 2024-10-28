@@ -245,7 +245,7 @@
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(264, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(270, 6);
             // 
             // killToolStripMenuItem
             // 
@@ -266,7 +266,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(264, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(270, 6);
             // 
             // editToolStripMenuItem
             // 
@@ -442,7 +442,7 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(233, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(272, 6);
             // 
             // exitToolStripMenuItem
             // 
@@ -477,7 +477,7 @@
             this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSettings.Location = new System.Drawing.Point(759, 26);
+            this.btnSettings.Location = new System.Drawing.Point(747, 29);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(81, 38);
@@ -529,9 +529,9 @@
             this.titleDescriptionlabel.AutoSize = true;
             this.titleDescriptionlabel.Location = new System.Drawing.Point(26, 53);
             this.titleDescriptionlabel.Name = "titleDescriptionlabel";
-            this.titleDescriptionlabel.Size = new System.Drawing.Size(615, 23);
+            this.titleDescriptionlabel.Size = new System.Drawing.Size(316, 23);
             this.titleDescriptionlabel.TabIndex = 15;
-            this.titleDescriptionlabel.Text = "以下是 86Box Manager 中保存的实例。选择一个实例，并在左侧进行操作选项。";
+            this.titleDescriptionlabel.Text = "选择一个实例，并在左侧进行操作选项。";
             // 
             // frmMain
             // 

@@ -321,7 +321,7 @@
             this.btnBrowse2.Name = "btnBrowse2";
             this.btnBrowse2.Size = new System.Drawing.Size(88, 38);
             this.btnBrowse2.TabIndex = 4;
-            this.btnBrowse2.Text = "Browse...";
+            this.btnBrowse2.Text = "浏览...";
             this.btnBrowse2.UseVisualStyleBackColor = true;
             this.btnBrowse2.Click += new System.EventHandler(this.btnBrowse2_Click);
             // 
@@ -344,7 +344,7 @@
             this.btnBrowse1.Name = "btnBrowse1";
             this.btnBrowse1.Size = new System.Drawing.Size(88, 38);
             this.btnBrowse1.TabIndex = 2;
-            this.btnBrowse1.Text = "Browse...";
+            this.btnBrowse1.Text = "浏览...";
             this.btnBrowse1.UseVisualStyleBackColor = true;
             this.btnBrowse1.Click += new System.EventHandler(this.btnBrowse1_Click);
             // 
@@ -460,7 +460,7 @@
             // 
             this.translatorlink.AutoSize = true;
             this.translatorlink.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.translatorlink.Location = new System.Drawing.Point(195, 283);
+            this.translatorlink.Location = new System.Drawing.Point(19, 286);
             this.translatorlink.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.translatorlink.Name = "translatorlink";
             this.translatorlink.Size = new System.Drawing.Size(359, 23);
@@ -473,18 +473,18 @@
             // 
             this.translatorlabel.AutoSize = true;
             this.translatorlabel.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.translatorlabel.Location = new System.Drawing.Point(19, 283);
+            this.translatorlabel.Location = new System.Drawing.Point(19, 258);
             this.translatorlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.translatorlabel.Name = "translatorlabel";
-            this.translatorlabel.Size = new System.Drawing.Size(168, 23);
+            this.translatorlabel.Size = new System.Drawing.Size(287, 23);
             this.translatorlabel.TabIndex = 18;
-            this.translatorlabel.Text = "本程序由 Kira 汉化。";
+            this.translatorlabel.Text = "本程序由 Kira 汉化。查看汉化仓库：";
             // 
             // lnkGithub
             // 
             this.lnkGithub.AutoSize = true;
             this.lnkGithub.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lnkGithub.Location = new System.Drawing.Point(341, 244);
+            this.lnkGithub.Location = new System.Drawing.Point(357, 215);
             this.lnkGithub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkGithub.Name = "lnkGithub";
             this.lnkGithub.Size = new System.Drawing.Size(328, 23);
@@ -519,7 +519,7 @@
             // 
             this.lnkGithub2.AutoSize = true;
             this.lnkGithub2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lnkGithub2.Location = new System.Drawing.Point(19, 244);
+            this.lnkGithub2.Location = new System.Drawing.Point(19, 215);
             this.lnkGithub2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnkGithub2.Name = "lnkGithub2";
             this.lnkGithub2.Size = new System.Drawing.Size(260, 23);
@@ -535,10 +535,10 @@
             this.lblCopyright.Location = new System.Drawing.Point(19, 139);
             this.lblCopyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(458, 69);
+            this.lblCopyright.Size = new System.Drawing.Size(612, 69);
             this.lblCopyright.TabIndex = 15;
-            this.lblCopyright.Text = "Copyright © 2018-2024 David Simunič\r\nLicensed under the MIT license. See the LICE" +
-    "NSE file for\r\nlicense information and AUTHORS for a list of contributors.";
+            this.lblCopyright.Text = "© 2018-2024 David Simunič 版权所有。\r\n本程序由 MIT 许可证授予许可。\r\n请参阅 LICENSE 文件查看许可证信息，查看 AUTH" +
+    "ORS 文件以获取贡献者列表。";
             // 
             // lblVersion
             // 

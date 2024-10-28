@@ -40,11 +40,11 @@ namespace _86boxManager
             //Check if a VM with this name already exists
             if (!originalName.Equals(txtName.Text) && main.VMCheckIfExists(txtName.Text))
             {
-                MessageBox.Show("A virtual machine with this name already exists. Please pick a different name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("这个名称已被使用，请更换一个。", "名称已被使用", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (txtName.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
             {
-                MessageBox.Show("There are invalid characters in the name you specified. You can't use the following characters: \\ / : * ? \" < > |", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("实例中不允许出现以下字符: \\ / : * ? \" < > |\n\n请更换一个名字，并再试一次。", "出现非法字符", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
