@@ -405,7 +405,7 @@
             this.btnBrowse3.Name = "btnBrowse3";
             this.btnBrowse3.Size = new System.Drawing.Size(88, 38);
             this.btnBrowse3.TabIndex = 11;
-            this.btnBrowse3.Text = "Browse...";
+            this.btnBrowse3.Text = "浏览...";
             this.btnBrowse3.UseVisualStyleBackColor = true;
             this.btnBrowse3.Click += new System.EventHandler(this.btnBrowse3_Click);
             // 

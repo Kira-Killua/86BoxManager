@@ -161,7 +161,7 @@
             this.cbxStartVM.Name = "cbxStartVM";
             this.cbxStartVM.Size = new System.Drawing.Size(160, 28);
             this.cbxStartVM.TabIndex = 5;
-            this.cbxStartVM.Text = "完成后开启实例";
+            this.cbxStartVM.Text = "完成后启动实例";
             this.cbxStartVM.UseVisualStyleBackColor = true;
             // 
             // pnlBottom
@@ -201,7 +201,7 @@
             this.cbxImport.AutoSize = true;
             this.cbxImport.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbxImport.Location = new System.Drawing.Point(19, 96);
-            this.cbxImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxImport.Margin = new System.Windows.Forms.Padding(4);
             this.cbxImport.Name = "cbxImport";
             this.cbxImport.Size = new System.Drawing.Size(164, 28);
             this.cbxImport.TabIndex = 0;
